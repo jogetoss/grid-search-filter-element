@@ -1,6 +1,6 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+The Grid Search Filter Element is used to filter records within grid columns based on desired column. Supports Grid, List Grid, Form Grid.
 
 # Getting Help
 

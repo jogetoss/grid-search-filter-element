@@ -1,0 +1,67 @@
+[
+    {
+        "title": "@@org.joget.marketplace.gridsearchfilter.element.configElement@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.id@@",
+                "type": "textfield",
+                "regex_validation": "^[a-zA-Z0-9_]+$",
+                "validation_message": "@@org.joget.marketplace.gridsearchfilter.element.invalidId@@",
+                "required": "True"
+            },
+            {
+                "name": "formDefId",
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.formDefId@@",
+                "type": "selectbox",
+                "required": "True",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/forms/options"
+            },
+            {
+                "name": "gridField",
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.gridField@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "formDefId",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options",
+                "description": "@@org.joget.marketplace.gridsearchfilter.element.gridField.desc@@",
+                "required": "True"
+            },
+            {
+                "name": "gridFieldSearch",
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.gridFieldSearch@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.ui@@",
+                "type": "header"
+            },
+            {
+                "name": "placeholder",
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.placeholder@@",
+                "value": "@@org.joget.marketplace.gridsearchfilter.element.placeholder.value@@",
+                "type": "textfield"
+            },
+            {
+                "name": "fieldPosition",
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.fieldPosition@@",
+                "type": "selectbox",
+                "value": "",
+                "options": [
+                    {
+                        "value": "right",
+                        "label": "@@org.joget.marketplace.gridsearchfilter.element.fieldPosition.right@@"
+                    },
+                    {
+                        "value": "left",
+                        "label": "@@org.joget.marketplace.gridsearchfilter.element.fieldPosition.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@org.joget.marketplace.gridsearchfilter.element.fieldPosition.center@@"
+                    }
+                ]
+            }
+        ]
+    }
+]
