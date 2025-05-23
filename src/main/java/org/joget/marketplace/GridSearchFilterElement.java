@@ -18,9 +18,22 @@ public class GridSearchFilterElement extends Element implements FormBuilderPalet
         String template = "GridSearchFilterElement.ftl";
         String id = formData.getPrimaryKeyValue();
 
-        WorkflowUserManager wum = (WorkflowUserManager) AppUtil.getApplicationContext().getBean("workflowUserManager");
-        boolean anonymous = wum.isCurrentUserAnonymous();
-        dataModel.put("anonymous", anonymous ? "true" : "false");
+        Object gridColumns = getProperty("gridFieldSearch");
+        if (gridColumns != null && gridColumns instanceof Object[]) {
+            String requestJson = "";
+            for (Object param : ((Object[]) gridColumns)) {
+                Map paramMap = ((Map) param);
+
+                if (requestJson.length() > 1) {
+                    requestJson += ",";
+                }
+                requestJson += paramMap.get("column");
+            }
+
+            if (requestJson.length() > 2) {
+                dataModel.put("gridColumns", requestJson);
+            }
+        }
 
         dataModel.put("id", id);
         String html = FormUtil.generateElementHtml(this, formData, template, dataModel);

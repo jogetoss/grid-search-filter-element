@@ -11,26 +11,41 @@
                 "required": "True"
             },
             {
-                "name": "formDefId",
-                "label": "@@org.joget.marketplace.gridsearchfilter.element.formDefId@@",
-                "type": "selectbox",
-                "required": "True",
-                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/forms/options"
-            },
-            {
                 "name": "gridField",
                 "label": "@@org.joget.marketplace.gridsearchfilter.element.gridField@@",
-                "type": "selectbox",
-                "options_ajax_on_change": "formDefId",
-                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options",
+                "type": "textfield",
                 "description": "@@org.joget.marketplace.gridsearchfilter.element.gridField.desc@@",
+                "required": "True"
+            },
+            {
+                "name": "searchAllColumns",
+                "label": "@@org.joget.marketplace.gridsearchfilter.element.searchAllColumns@@",
+                "type": "selectbox",
+                "options": [
+                {
+                    "value": "true",
+                    "label": "@@org.joget.marketplace.gridsearchfilter.element.searchAllColumns.yes@@"
+                },
+                {
+                    "value": "false",
+                    "label": "@@org.joget.marketplace.gridsearchfilter.element.searchAllColumns.no@@"
+                }
+                ],
                 "required": "True"
             },
             {
                 "name": "gridFieldSearch",
                 "label": "@@org.joget.marketplace.gridsearchfilter.element.gridFieldSearch@@",
-                "type": "textfield",
-                "required": "True"
+                "type": "grid",
+                "required": "True",
+                "control_field": "searchAllColumns",
+                "control_value": "false",
+                "columns": [
+                    {
+                        "key": "column",
+                        "label": "@@org.joget.marketplace.gridsearchfilter.element.gridFieldSearch.column@@"
+                    }
+                ]
             },
             {
                 "label": "@@org.joget.marketplace.gridsearchfilter.element.ui@@",
