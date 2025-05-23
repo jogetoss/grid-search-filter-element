@@ -56,6 +56,9 @@ function initializeGridSearch(searchInput) {
             } else {
                 var combined = columnList.map(function(field) {
                     var cell = row.querySelector('span.grid-cell[name="grid_' + field + '"]');
+                    if(!cell){
+                        cell = row.querySelector('span.grid-cell[column_key="' + field + '"]');
+                    }
                     return cell ? cell.textContent.toLowerCase() : "";
                 }).join(" ");
                 matches = combined.includes(filter);
